@@ -3,16 +3,18 @@
     <div class="col-xs-12">
       <p>Add new Servers or blueprints!</p>
       <label>Server Name</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerName">
+      <input type="text" class="form-control" [(ngModel)]="serverName">
+    <!--innerText works with labels-->
+      <!-- <label for="" [innerText]="content"></label> -->
       <label>Server Content</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <input type="text" class="form-control" [(ngModel)]="serverContent" >
       <br>
       <button
-        class="btn btn-primary"
-        (click)="onAddServer()">Add Server</button>
+        class="btn btn-primary" (click)="onCreateServer()"
+       >Add Server</button>
       <button
-        class="btn btn-primary"
-        (click)="onAddBlueprint()">Add Server Blueprint</button>
+        class="btn btn-primary" (click)="onCreateBluePrint()"
+       >Add Server Blueprint</button>
     </div>
   </div>
   <hr>
@@ -21,11 +23,11 @@
       <div
         class="panel panel-default"
         *ngFor="let element of serverElements">
-        <div class="panel-heading">{{ element.name }}</div>
+        <div class="panel-heading">{{element.name}}</div>
         <div class="panel-body">
           <p>
-            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+            <strong style="color: red" *ngIf="element.type===1">{{element.content}}</strong>
+            <em *ngIf="element.type===0">{{element.content}}</em>
           </p>
         </div>
       </div>

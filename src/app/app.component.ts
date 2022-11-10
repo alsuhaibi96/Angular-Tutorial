@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+/**An interface that has the properties of server */
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,24 @@ export class AppComponent {
     content:'conetnt test'
   }];
 
+/**when the server is created */
+onServerCreated(serverData:Server){
+  this.serverElements.push({
+    type:0,
+    name:serverData.name,
+    content:serverData.content
+  })
 
+}
 
+/**when the bluePrintServer is created */
+onBluePrintCreated(serverData:Server){
+  this.serverElements.push({
+    type:1,
+    name:serverData.name,
+    content:serverData.content
+  })
 
+}
 
 }

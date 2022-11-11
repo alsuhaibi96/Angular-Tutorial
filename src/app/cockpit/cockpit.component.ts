@@ -6,7 +6,6 @@ import { Component, OnInit ,EventEmitter , Output} from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
-  serverName='';
   serverContent='';
 
   /**Properties that uses eventEmitter of angular framework */
@@ -19,19 +18,19 @@ export class CockpitComponent implements OnInit {
   }
 
 
-  /**Create server type */
-onCreateServer(){
+  /**Create server type with the local reference input element */
+onCreateServer(serverInput:HTMLInputElement){
 this.serverCreated.emit({
-  name:this.serverName,
+  name:serverInput.value,
   content:this.serverContent
 })
  }
 
 /**Create bluePrint type */
 
-onCreateBluePrint(){
+onCreateBluePrint(serverInput:HTMLInputElement){
   this.bluePrintCreated.emit({
-    name:this.serverName,
+    name:serverInput.value,
     content:this.serverContent
   })
  }

@@ -8,7 +8,8 @@ import {
   DoCheck,
   AfterContentInit,
   AfterViewInit,
-  AfterViewChecked
+  AfterViewChecked,
+  AfterContentChecked
 } from '@angular/core';
 
 @Component({
@@ -20,9 +21,10 @@ import {
 export class ServerElementComponent implements OnInit,
 OnChanges,
 DoCheck,
-AfterContentInit
-// AfterViewInit,
-// AfterViewChecked,
+AfterContentInit,
+AfterContentChecked,
+AfterViewInit,
+ AfterViewChecked
  {
   @Input('serverElement') element:{
   type:boolean,
@@ -51,6 +53,18 @@ AfterContentInit
   }
   ngAfterContentInit(){
     console.log('ngAfterContentInit was called!');
+
+  }
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked was called!');
+
+  }
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit was called!');
+
+  }
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked was called!');
 
   }
 }

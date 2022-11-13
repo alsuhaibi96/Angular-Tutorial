@@ -32,7 +32,12 @@ onBluePrintCreated(serverData:Server){
     name:serverData.name,
     content:serverData.content
   })
-
 }
+
+/**called when change firest element called
+ * 
+ */
+onFirstChange(){
+  this.serverElements[0].name='changed'}
 
 }

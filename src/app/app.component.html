@@ -6,7 +6,8 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-    <app-server-element *ngFor="let serverElement of serverElements" [serverElement]="serverElement">
+      <button class="btn btn-primary" (click)="onFirstChange()">Change First Element</button>
+    <app-server-element *ngFor="let serverElement of serverElements" [serverElement]="serverElement" [name]="serverElement.name">
       <p>
         <strong style="color: red" *ngIf="serverElement.type===1">{{serverElement.content}}</strong>
         <em *ngIf="serverElement.type===0">{{serverElement.content}}</em>

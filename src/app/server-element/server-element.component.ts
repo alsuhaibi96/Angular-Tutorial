@@ -10,7 +10,10 @@ import {
   AfterViewInit,
   AfterViewChecked,
   AfterContentChecked,
-  OnDestroy
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  ContentChild
 } from '@angular/core';
 
 @Component({
@@ -35,6 +38,11 @@ AfterViewInit,
 }
 @Input()
  name:string;
+
+ @ViewChild('heading') header:ElementRef
+ @ContentChild('paragraghContent') paragraph:ElementRef
+
+ 
  
  constructor() {
     console.log('constructor was called');
@@ -42,6 +50,11 @@ AfterViewInit,
 
   ngOnInit(): void {
     console.log('ngOnInit was called!');
+    console.log('this is the header content'+this.header.nativeElement.textContent);
+    console.log('this is the paragragh content'+this.paragraph.nativeElement.textContent);
+
+
+
   }
   ngOnChanges(changes:SimpleChanges){
     console.log('OnChanges was called!');
@@ -54,6 +67,7 @@ AfterViewInit,
   }
   ngAfterContentInit(){
     console.log('ngAfterContentInit was called!');
+    console.log('this is the paragragh content'+this.paragraph.nativeElement.textContent);
 
   }
   ngAfterContentChecked(){
@@ -62,6 +76,8 @@ AfterViewInit,
   }
   ngAfterViewInit(){
     console.log('ngAfterViewInit was called!');
+    console.log('this is the header content'+this.header.nativeElement.textContent);
+
 
   }
   ngAfterViewChecked(){

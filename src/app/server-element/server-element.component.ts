@@ -4,7 +4,8 @@ import {
   Input,
   ViewEncapsulation,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
+  DoCheck
 } from '@angular/core';
 
 @Component({
@@ -14,7 +15,8 @@ import {
   encapsulation:ViewEncapsulation.None
 })
 export class ServerElementComponent implements OnInit,
-OnChanges
+OnChanges,
+DoCheck
  {
   @Input('serverElement') element:{
   type:boolean,
@@ -37,4 +39,9 @@ OnChanges
     console.log(changes);
 
   }
+  ngDoCheck(): void {
+    console.log('ngDoCheck was called!');
+    
+  }
+  
 }

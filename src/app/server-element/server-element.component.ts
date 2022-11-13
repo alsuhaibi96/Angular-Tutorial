@@ -5,7 +5,10 @@ import {
   ViewEncapsulation,
   OnChanges,
   SimpleChanges,
-  DoCheck
+  DoCheck,
+  AfterContentInit,
+  AfterViewInit,
+  AfterViewChecked
 } from '@angular/core';
 
 @Component({
@@ -16,7 +19,10 @@ import {
 })
 export class ServerElementComponent implements OnInit,
 OnChanges,
-DoCheck
+DoCheck,
+AfterContentInit
+// AfterViewInit,
+// AfterViewChecked,
  {
   @Input('serverElement') element:{
   type:boolean,
@@ -43,5 +49,8 @@ DoCheck
     console.log('ngDoCheck was called!');
     
   }
-  
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit was called!');
+
+  }
 }

@@ -9,7 +9,8 @@ import {
   AfterContentInit,
   AfterViewInit,
   AfterViewChecked,
-  AfterContentChecked
+  AfterContentChecked,
+  OnDestroy
 } from '@angular/core';
 
 @Component({
@@ -65,6 +66,10 @@ AfterViewInit,
   }
   ngAfterViewChecked(){
     console.log('ngAfterViewChecked was called!');
+
+  }
+  ngOnDestroy(){
+    console.log('ngOnDestroy was called!');
 
   }
 }

@@ -34,10 +34,19 @@ onBluePrintCreated(serverData:Server){
   })
 }
 
-/**called when change firest element called
+/**called when change first element called
  * 
  */
 onFirstChange(){
-  this.serverElements[0].name='changed'}
+  this.serverElements[0].name='changed'
+}
+
+/**called when delete first element called
+ * 
+ */
+deleteFirst(){
+  this.serverElements.splice(0,1);
+}
+
 
 }
